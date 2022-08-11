@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap");
+
+:root {
+  font-family: "Playfair Display", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px 0;
+  height: 100vh;
+  background: linear-gradient(to right, #000428, #083b68);
+  /* background-image: linear-gradient(
+    to right top,
+    #051937,
+    #05183b,
+    #08173f,
+    #0d1542,
+    #141244
+  ); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Calculator wrapper */
+.container {
+  background-color: #000;
+  width: 80%;
+  height: 100%;
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.75);
+}
+
+/* Display Screen */
+.display {
+  width: 100%;
+  height: 8rem;
+  background: rgb(39, 37, 37);
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Styles for h1 in the display screen */
+.display h1 {
+  font-family: "Roboto", sans-serif;
+  color: #f5f5f5;
+  font-weight: 600;
+  font-size: 3rem;
+  padding: 25px 10px;
+  overflow-x: auto;
+}
+
+/* Custom Scrollbar */
+.display h1::-webkit-scrollbar {
+  width: 1em;
+}
+.display h1::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.display h1::-webkit-scrollbar-thumb {
+  background-color: rgb(62, 82, 17);
+  outline: 1px solid rgb(62, 82, 17);
+}
+
+/* Calculator button wrapper */
+.buttons {
+  padding: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  height: calc(100% - 8rem);
+  gap: 7px;
+}
+
+/* calculator buttons */
+.buttons button {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  background: rgb(44, 43, 43);
+  color: #f5f5f5;
+  font-size: 1.7rem;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  transition: all 1s linear;
+}
+
+/* Effects on hovering on buttons */
+button:hover {
+  filter: brightness(200%);
+  transform: scale(1.07);
+}
+button:active {
+  transform: translateY(2px);
+}
+button:focus {
+  outline: none;
+}
+
+/* Operator buttons styles */
+button.operator {
+  background: #0e3377;
+  font-weight: bold;
+  color: #f5f5f5;
+}
+
+button.equal {
+  background: #800000;
+}
+
+button.clear {
+  background: rgb(5, 61, 5);
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    width: 40%;
+  }
+}
